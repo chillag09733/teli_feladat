@@ -1,7 +1,71 @@
-*{
-    padding: 0;
-    margin: 0;
+@import url(variables.css);
+* {
+  padding: 0;
+  margin: 0;
 }
-html{
-    background-color: url(kepek/hatter.jpg);
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  background-image: url(kepek/hatter.jpg);
+  background-size: cover;
+}
+body {
+  width: 800px;
+  height: fit-content;
+  background-color: var(--title);
+  margin-inline: auto;
+  display: block;
+}
+header {
+  background-image: url(kepek/fejlec.jpg);
+  height: 8rem;
+}
+header h1 {
+  text-align: center;
+  position: relative;
+  top: 5rem;
+  color: var(--title);
+  text-shadow: 1px 1px var(--shadow);
+}
+.buttons a {
+  background-color: var(--gomb);
+  display: block;
+  margin-inline: auto;
+  justify-content: center;
+  width: 8rem;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--title);
+  transition: ease-in-out 0.25s;
+  display: flex;
+}
+.middle {
+  display: grid;
+  grid-template-areas:"a b c";
+  grid-template-columns: auto 1fr 300px;
+  gap: 1rem;
+
+}
+.buttons{
+    grid-area: a;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    grid-area: b;
+}
+tr,
+td, th {
+  border: 1px solid var(--gomb);
+}
+tr:nth-child(even){
+    background-color: var(--hatter);
+}
+.vers{
+    grid-area: c;
 }
