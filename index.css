@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    background-image: url(kepek/hatter.jpg);
+    background-size: cover;
+}
+body{
+    width: 800px;
+    height: fit-content;
+    background-color: red;
+    margin-inline: auto;
+    display: block;
+}
