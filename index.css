@@ -6,7 +6,7 @@
 }
 html {
   background-image: url(kepek/hatter.jpg);
-  background-size: cover;
+  background-repeat: repeat;
 }
 body {
   width: 1000px;
@@ -16,6 +16,7 @@ body {
   display: block;
   margin-top: 1rem;
   position: relative;
+  box-shadow: 0 4px 8px 0 var(--arnyek);
 }
 header {
   background-image: url(kepek/fejlec.jpg);
@@ -52,7 +53,6 @@ header h1 {
   display: grid;
   grid-template-areas: "a b c";
   grid-template-columns: auto 1fr 300px;
-  padding: 1rem 0.5rem 0.5rem 0.5rem;
 }
 .middle h2 {
   font-size: 18px;
@@ -60,6 +60,7 @@ header h1 {
 }
 .buttons {
   grid-area: a;
+  padding: 1rem 0.5rem 0 0.5rem;
 }
 
 table {
@@ -68,6 +69,7 @@ table {
   grid-area: b;
   height: fit-content;
   line-height: 1.5;
+  margin-top: 1rem;
 }
 tr,
 td,
@@ -80,8 +82,9 @@ tr:nth-child(odd) {
 }
 .vers {
   grid-area: c;
-  padding-left: 1rem;
+  padding: 0 0 5rem 1rem;
   border: 1px solid var(--keret);
+  margin-left: 0.5rem;
 }
 .bottom {
   background-color: var(--gomb);
@@ -92,13 +95,8 @@ tr:nth-child(odd) {
   text-align: center;
   box-sizing: border-box;
 }
-@media screen and (max-width: 600px) {
-  .middle {
+@media (max-width: 600px) {
+  main.middle {
     grid-template-columns: 1fr;
-    grid-template-areas: 
-    "a a a"
-    "b b b"
-    "c c c";
   }
 }
-
