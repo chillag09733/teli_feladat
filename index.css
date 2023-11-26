@@ -1,8 +1,5 @@
 @import url(variables.css);
-* {
-  padding: 0;
-  margin: 0;
-}
+
 * {
   padding: 0;
   margin: 0;
@@ -12,11 +9,13 @@ html {
   background-size: cover;
 }
 body {
-  width: 800px;
-  height: fit-content;
+  width: 1000px;
+  height: 650px;
   background-color: var(--title);
   margin-inline: auto;
   display: block;
+  margin-top: 1rem;
+  position: relative;
 }
 header {
   background-image: url(kepek/fejlec.jpg);
@@ -36,36 +35,70 @@ header h1 {
   justify-content: center;
   width: 8rem;
   padding: 10px 15px;
-  text-align: center;
   border-radius: 15px;
   font-size: 16px;
   text-decoration: none;
   color: var(--title);
   transition: ease-in-out 0.25s;
   display: flex;
+  margin: 5px;
+}
+.buttons a:hover {
+  border: 1px solid var(--gomb);
+  background-color: var(--title);
+  color: var(--shadow);
 }
 .middle {
   display: grid;
-  grid-template-areas:"a b c";
+  grid-template-areas: "a b c";
   grid-template-columns: auto 1fr 300px;
-  gap: 1rem;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
+}
+.middle h2 {
+  font-size: 18px;
+  padding: 1rem 0 1rem 0;
+}
+.buttons {
+  grid-area: a;
+}
 
-}
-.buttons{
-    grid-area: a;
-}
-table{
-    width: 100%;
-    border-collapse: collapse;
-    grid-area: b;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  grid-area: b;
+  height: fit-content;
+  line-height: 1.5;
 }
 tr,
-td, th {
-  border: 1px solid var(--gomb);
+td,
+th {
+  border-bottom: 1px solid var(--gomb);
 }
-tr:nth-child(even){
-    background-color: var(--hatter);
+
+tr:nth-child(odd) {
+  background-color: var(--hatter);
 }
-.vers{
-    grid-area: c;
+.vers {
+  grid-area: c;
+  padding-left: 1rem;
+  border: 1px solid var(--keret);
 }
+.bottom {
+  background-color: var(--gomb);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 600px) {
+  .middle {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "a a a"
+    "b b b"
+    "c c c";
+  }
+}
+
