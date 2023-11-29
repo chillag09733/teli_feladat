@@ -1,15 +1,120 @@
-*{
-    padding: 0;
-    margin: 0;
+@import url(variables.css);
+* {
+  padding: 0;
+  margin: 0;
 }
-html{
-    background-image: url(kepek/hatter.jpg);
-    background-size: cover;
+html {
+  background-image: url(kepek/hatter.jpg);
+  background-repeat: repeat;
 }
-body{
-    width: 800px;
-    height: fit-content;
-    background-color: red;
-    margin-inline: auto;
-    display: block;
+body {
+  width: 950px;
+  height: fit-content;
+  background-color: var(--title);
+  margin-inline: auto;
+  display: block;
+  margin-top: 1rem;
+  position: relative;
+  box-shadow: 0 4px 8px 0 var(--arnyek);
+}
+header {
+  background-image: url(kepek/fejlec.jpg);
+  height: 8rem;
+}
+header h1 {
+  text-align: center;
+  position: relative;
+  top: 5rem;
+  color: var(--title);
+  text-shadow: 1px 1px var(--shadow);
+}
+.buttons a {
+  background-color: var(--gomb);
+  display: block;
+  margin-inline: auto;
+  justify-content: center;
+  width: 9rem;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--title);
+  transition: ease-in-out 0.25s;
+  display: flex;
+  margin: 5px;
+}
+.buttons a:hover {
+  border: 1px solid var(--gomb);
+  background-color: var(--title);
+  color: var(--shadow);
+}
+.middle {
+  display: grid;
+  grid-template-areas: "a b c";
+  grid-template-columns: auto 1fr 350px;
+}
+.middle h2 {
+  font-size: 18px;
+  padding: 1rem 0 1rem 0;
+}
+.buttons {
+  grid-area: a;
+  padding: 1rem 0.5rem 0 0.5rem;
+}
+.galery{
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  justify-content: center;
+  gap: 30px;
+}
+
+.pictures {
+  padding: 20px 0 20px 20px;
+  text-align: center;
+  background-color: white;
+}
+.galery .pictures:nth-child(2), .galery .pictures:nth-child(4){
+  margin-top: -60px;
+}
+
+.pictures img{
+  height: auto;
+  width: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px 10px 30px 10px;
+  border: 1px solid #BFBFBF;
+  background-color: white;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  margin-left: 10px;
+}
+
+.rotate_right {
+  float: left;
+  transform: rotate(7deg);
+}
+
+.rotate_left {
+  float: left;
+  transform: rotate(-8deg);
+}
+.vers {
+  grid-area: c;
+  padding: 0 0 5rem 1rem;
+  border: 1px solid var(--keret);
+  padding-right: 0.5rem;
+}
+.bottom {
+  background-color: var(--gomb);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+@media (max-width: 600px) {
+  main.middle {
+    grid-template-columns: 1fr;
+  }
 }
